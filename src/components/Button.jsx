@@ -30,3 +30,16 @@ export default function Button({
     );
 }
 ```
+
+**Explanation:**
+
+- Import the React library to create the React component.
+- Export the `Button` function as the default export.
+- The `Button` function accepts several props:
+  - `children`: The content that will be displayed inside the button.
+  - `type`: The type of button (defaults to `"button"`).
+  - `bgColor`: The background color of the button (defaults to `"bg-blue-600"`).
+  - `textColor`: The text color of the button (defaults to `"text-white"`).
+  - `className`: Additional CSS classes to be applied to the button.
+  - Any additional props passed to the button will be spread into the button element.
+- The `Button` function returns a button element with the specified props and content.
