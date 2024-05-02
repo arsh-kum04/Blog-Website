@@ -11,9 +11,9 @@
 // The `autoprefixer` plugin automatically adds vendor prefixes to your CSS. This ensures that your CSS will work in all major browsers.
 
 export default {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
+  plugins: [
+    tailwindcss, // The `tailwindcss` plugin is the core plugin that provides all of the core features of Tailwind CSS.
+    autoprefixer, // The `autoprefixer` plugin automatically adds vendor prefixes to your CSS. This ensures that your CSS will work in all major browsers.
+  ],
 }
 ```
