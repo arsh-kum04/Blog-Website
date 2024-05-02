@@ -2,18 +2,30 @@
 
 **File Name**: App.js
 
-**Line by Line Documented Code**:
-
 ```js
-import React, { useState, useEffect } from 'react' // Importing React and hooks useState, useEffect
-import { useDispatch } from 'react-redux' // Importing useDispatch hook from react-redux
-import './App.css' // Importing css stylesheet
-import authService from "./appwrite/auth" // Importing authService from appwrite/auth.js
-import { login, logout } from "./store/authSlice" // Importing login and logout actions from authSlice.js
-import { Footer, Header } from './components' // Importing Header and Footer components
-import { Outlet } from 'react-router-dom' // Importing Outlet component
+// Importing React and hooks useState, useEffect
+import React, { useState, useEffect } from 'react' 
 
-function App() { // Defining App function as a functional component
+// Importing useDispatch hook from react-redux
+import { useDispatch } from 'react-redux'
+
+// Importing css stylesheet
+import './App.css'
+
+// Importing authService from appwrite/auth.js
+import authService from "./appwrite/auth"
+
+// Importing login and logout actions from authSlice.js
+import { login, logout } from "./store/authSlice"
+
+// Importing Header and Footer components
+import { Footer, Header } from './components'
+
+// Importing Outlet component
+import { Outlet } from 'react-router-dom'
+
+// Defining App function as a functional component
+function App() { 
 
   // Defining state variable loading with initial value true and setting up dispatch function
   const [loading, setLoading] = useState(true) 
@@ -21,30 +33,41 @@ function App() { // Defining App function as a functional component
 
   // Using useEffect hook to check if user is logged in
   useEffect(() => {
-    authService.getCurrentUser() // Calling getCurrentUser function from authService
+    // Calling getCurrentUser function from authService
+    authService.getCurrentUser() 
       .then((userData) => { // Handling the promise
         if (userData) { // If user is logged in
-          dispatch(login({ userData })) // Dispatching login action with user data
+          // Dispatching login action with user data
+          dispatch(login({ userData })) 
         } else { // If user is not logged in
-          dispatch(logout()) // Dispatching logout action
+          // Dispatching logout action
+          dispatch(logout()) 
         }
       })
       .finally(() => setLoading(false)); // Setting loading to false after promise resolves
   }, []); // Empty dependency array to run effect only once
 
-  return !loading ? ( // Conditional rendering based on loading state
-    
+  // Conditional rendering based on loading state
+  return !loading ? ( 
+
       <div className='min-h-screen flex flex-wrap content-between bg-black text-white'>
         <div className='w-full block'>
-          <Header /> {/* Rendering Header component */}
+          {/* Rendering Header component */}
+          <Header /> 
+
+          {/* Rendering main content */}
           <main> 
-            <Outlet /> {/* Rendering Outlet component */}
+            {/* Rendering Outlet component */}
+            <Outlet /> 
           </main>
-          <Footer /> {/* Rendering Footer component */}
+
+          {/* Rendering Footer component */}
+          <Footer /> 
         </div>
       </div>
       ) : null
 }
 
-export default App // Exporting App component
+// Exporting App component
+export default App
 ```
