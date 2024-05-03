@@ -1,22 +1,19 @@
 **Folder Name:** CSS
 
-**File Name:** custom.css
+**File Name:** colors.css
 
 **Line by Line Documented Code:**
 
 ```css
-/* This class defines the styling for elements with the class name "glass". */
-.glass {
-  /* The background color of the element is set to a semi-transparent rgba color with an alpha value of 0.5. */
-  background: rgba(164, 174, 213, 0.5);
-  
-  /* This property applies a blur filter effect to the backdrop of the element. The blur radius is set to 10px. */
-  -webkit-backdrop-filter: blur(10px);
-  
-  /* This property is a vendor-prefixed version of the backdrop-filter property and is supported by most modern browsers. */
-  backdrop-filter: blur(10px);
-  
-  /* The border of the element is set to a solid 1px wide line with a semi-transparent rgba color with an alpha value of 0.25. */
-  border: 1px solid rgba(164, 174, 213, 0.25);
+/* This class defines the styling for elements with the class name "primary-color". */
+.primary-color {
+  /* The color of the text within the element is set to a dark shade of blue. */
+  color: #00467f;
+}
+
+/* This class defines the styling for elements with the class name "secondary-color". */
+.secondary-color {
+  /* The color of the text within the element is set to a light shade of blue. */
+  color: #90a4ae;
 }
 ```
