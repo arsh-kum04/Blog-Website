@@ -1,8 +1,8 @@
-**Folder Name**: App
-
-**File Name**: App.js
-
 ```js
+// Folder Name: App
+
+// File Name: App.js
+
 // Importing React and hooks useState, useEffect
 import React, { useState, useEffect } from 'react' 
 
