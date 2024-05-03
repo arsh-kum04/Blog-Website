@@ -1,45 +1,45 @@
 **Folder Name:** Components
 
-**File Name:** Button.jsx
+**File Name:** MyComponent.js
 
 **Line by Line Documented Code:**
 
-```jsx
+```js
 // Importing the React library
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-// Default export of the function component called Button
-export default function Button({
-    // Destructuring props passed to the component:
-    children, // The content that will be displayed inside the button
-    type = "button", // The type of button (defaults to "button")
-    bgColor = "bg-blue-600", // The background color of the button (defaults to "bg-blue-600")
-    textColor = "text-white", // The text color of the button (defaults to "text-white")
-    className = "", // Additional CSS classes to be applied to the button
-    ...props // Spread the rest of the props passed to the component
-}) {
-    // Return the Button component
+// Default export of the function component called MyComponent
+export default function MyComponent() {
+    // Using the useState hook to create a state variable called "count" with an initial value of 0
+    const [count, setCount] = useState(0);
+
+    // Using the useEffect hook to run a side effect after every render
+    useEffect(() => {
+        // Code to be executed after every render
+        console.log(`The current count is ${count}`);
+    }, [count]); // The array of dependencies ensures that the effect is only run when the value of "count" changes
+
+    // Define a function to increment the count
+    const handleIncrement = () => {
+        // Using the setCount function to update the state variable "count" and increment its value by 1
+        setCount(prevCount => prevCount + 1);
+    };
+
+    // Return the MyComponent component
     return (
-        <button
-            // Constructing the className string by combining the default CSS classes and any additional classes passed as props
-            className={`px-4 py-2 rounded-lg ${bgColor} ${textColor} ${className}`}
-            {...props} // Spread the rest of the props passed to the component
-        >
-            {children} // Display the content passed as props
-        </button>
+        <div>
+            <h1>Count: {count}</h1>
+            <button onClick={handleIncrement}>Increment</button>
+        </div>
     );
 }
 ```
 
 **Explanation:**
 
-- Import the React library to create the React component.
-- Export the `Button` function as the default export.
-- The `Button` function accepts several props:
-  - `children`: The content that will be displayed inside the button.
-  - `type`: The type of button (defaults to `"button"`).
-  - `bgColor`: The background color of the button (defaults to `"bg-blue-600"`).
-  - `textColor`: The text color of the button (defaults to `"text-white"`).
-  - `className`: Additional CSS classes to be applied to the button.
-  - Any additional props passed to the button will be spread into the button element.
-- The `Button` function returns a button element with the specified props and content.
+- Import the React library and the `useState` and `useEffect` hooks.
+- Export the `MyComponent` function as the default export.
+- The `MyComponent` function is a function component that uses the `useState` hook to create a state variable called `count` with an initial value of 0.
+- The `MyComponent` function also uses the `useEffect` hook to run a side effect after every render. The side effect logs the current value of `count` to the console.
+- The `MyComponent` function defines a function called `handleIncrement` that increments the value of `count` by 1.
+- The `MyComponent` function returns a JSX element that displays the current value of `count` and a button that, when clicked, calls the `handleIncrement` function.
