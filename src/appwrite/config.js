@@ -1,8 +1,8 @@
-**Folder Name:** Appwrite
+## Folder Name: Appwrite
 
 **File Name:** service.js
 
-**Line by Line Documented Code:**
+**Line by line Documented Code:**
 ```js
 // Importing the conf file for appwrite configuration
 import conf from '../conf/conf.js';
